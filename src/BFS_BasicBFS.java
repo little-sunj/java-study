@@ -13,13 +13,13 @@ public class BFS_BasicBFS {
 		};
 		
 		BFS_BasicBFS a = new BFS_BasicBFS();
-		System.out.println(a.bfs(grid));
+		System.out.println(a.solve(grid));
 
 	}
 	
 	int m, n = 0;
 	int[][] dirs = {{1,0},{-1,0},{0,1},{0,-1}};
-	public int bfs(char[][] grid) {
+	public int solve(char[][] grid) {
 		if (grid ==null || grid.length == 0) {
 			return 0;
 		}
