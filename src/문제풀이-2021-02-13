@@ -1,0 +1,48 @@
+class Solution {
+    public int countGoodTriplets(int[] arr, int a, int b, int c) {
+        
+        int result = 0;
+        
+        for (int i =0; i < arr.length; i ++) {
+            for (int j=i+1; j < arr.length; j++) {
+                for (int k=j+1; k<arr.length; k++) {  
+
+                        if ( Math.abs(arr[i]-arr[j]) <=a 
+                            && Math.abs(arr[j]-arr[k]) <=b 
+                            && Math.abs(arr[i]-arr[k]) <=c ) {
+                            result++;
+                        }
+                   
+                }
+            }
+            
+        }
+        
+        return result;
+        
+    }
+}
+
+Runtime: 13 ms, faster than 69.06% of Java online submissions for Count Good Triplets.
+Memory Usage: 36.7 MB, less than 54.24% of Java online submissions for Count Good Triplets.
+
+
+-----
+
+- 다른 코드 참고
+
+class Solution {
+    public int countGoodTriplets(int[] arr, int a, int b, int c) {
+        int output = 0;
+        
+        for(int i = 0; i < arr.length -2; i++)
+            for(int j = i+1; j < arr.length -1; j++)
+                if(Math.abs(arr[i] - arr[j]) <= a)
+                    for(int k = j+1; k < arr.length; k++)
+                        if(Math.abs(arr[j] - arr[k]) <= b)
+                            if(Math.abs(arr[i] - arr[k]) <= c)
+                                output++;
+
+        return output;
+    }
+}
